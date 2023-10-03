@@ -19,7 +19,18 @@ const routes = [
     path: "/login",
     name: "Login",
     component: () => import('../components/Login.vue')
+  },
+  {
+    path: "/AreasDeTrabajo",
+    name: "AreasDeTrabajo",
+    component: () => import('../components/AreasDeTrabajo.vue')
+  },
+  {
+    path: "/BaseDeClientes",
+    name: "BaseDeClientes",
+    component: () => import('../components/BaseDeClientes.vue')
   }
+  
 ]
 
 const router = createRouter({

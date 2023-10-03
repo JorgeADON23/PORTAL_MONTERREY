@@ -1,0 +1,31 @@
+.input {
+    width: 432px;
+    height: 58px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 5px solid rgba(186, 182, 182, 0.40);
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin: auto;
+    margin-top: 20px;
+}
+
+.logo {
+    width: 400px;
+    flex-shrink: 0;
+}
+
+.filas {
+    margin: 20px;
+}
+
+.btnIngrsar {
+    border-radius: 10px;
+    border: 5px solid rgba(255, 195, 195, 0.40);
+    background: #B52828;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 432px;
+    height: 58px;
+    flex-shrink: 0;
+    font-weight: bold;
+}
