@@ -1,0 +1,26 @@
+* {
+    background-color: #EBE8E8;
+}
+
+.containerData {
+    width: 1387px;
+    height: 843px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: #FFF;
+    margin-left: 20px;
+    margin: auto;
+}
+
+.columnMenu {
+    width: 293px;
+    height: 843px;
+    flex-shrink: 0;border-radius: 50px 0px 0px 50px;
+    background: #F82828;
+}
+
+
+.columnData{
+    flex-shrink: 0;border-radius: 0px 50px 50px 0px;
+    background: white;
+}

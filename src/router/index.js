@@ -28,7 +28,7 @@ const routes = [
   {
     path: "/BaseDeClientes",
     name: "BaseDeClientes",
-    component: () => import('../components/BaseDeClientes.vue')
+    component: () => import('../components/BaseClientes.vue')
   }
   
 ]
