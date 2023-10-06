@@ -1,95 +1,146 @@
 <template>
     <body>
-        <div class="container-fluid" style="margin: 0;">
-            <div class="row rowHeader">
-                <div class="col encabezado">
-                    <p style="text-align: left;">(Area de trabajo)</p>
-                </div>
-                <div class="col encabezado">
-                    <p style="text-align: right;">(Usuario)</p>
-                </div>
-            </div>
-            <div class="row" style="padding-left: 20px; padding-right: 20px;">
-                <div class=" container containerData ">
-                    <div class="row">
-                        <div class="col-1 columnMenu">
-                            <div class="row">
-                                <div>
-                                    <img src="../assets/Img/ICON_WHITE.png" alt="" class="icon">
-                                </div>
+        <div class="container-fluid" style=" padding: 0px;">
+
+            <div class="row filas">
+                <div class="col-3 sideBar">
+                    <div>
+                        <div class="row">
+                            <div class="divIcon">
+                                <img src="../assets/Img/ICON_RED.png" alt="" class="icon">
                             </div>
-                            <div class="row">
+                        </div>
+                        <div class="row">
+                            <div>
                                 <nav class="main-menu">
-                                    <ul style="list-style-type: none;">
+                                    <ul style="list-style-type: none;" class="ulMenu">
                                         <li class="listado">
-                                            <a href="">
-                                                <i class="material-symbols-outlined icnosList" >groups</i>
-                                                <span class="nav-text">
-                                                    Base de Clientes
-                                                </span>
+                                            <a href="" class="aLinks">
+                                                <span class="material-symbols-outlined icnosList">
+                                                    groups
+                                                </span> Base de Clientes
                                             </a>
 
                                         </li>
                                         <li class="listado">
-                                            <a href="#">
-                                                <i class="material-symbols-outlined icnosList">sync</i>
-                                                <span class="nav-text">
-                                                    Renovaciones
-                                                </span>
+                                            <a href="#" class="aLinks">
+                                                <span class="material-symbols-outlined icnosList">
+                                                    sync
+                                                </span> Renovaciones
                                             </a>
 
                                         </li>
-                                        <li class="listado " >
-                                            <a href="#">
-                                                <i class="material-symbols-outlined icnosList">add_box</i>
-                                                <span class="nav-text">
-                                                    Sistemas Nuevos
-                                                </span>
+                                        <li class="listado ">
+                                            <a href="#" class="aLinks">
+                                                <span class="nav-text material-symbols-outlined icnosList">
+                                                    add_box
+                                                </span> Sistemas Nuevos
                                             </a>
                                         </li>
-
                                     </ul>
                                 </nav>
                             </div>
                         </div>
-                        <div class="col columnData">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="contenedorBc">
+                        <div class="header">
                             <div class="row">
-                                <div style="margin-top: 70px; margin-left: 30px;">
-                                    <h1 style="text-align: left; font-weight: bold;">Base de Clientes</h1>
+                                <div class="col">
+                                    <h4 style="text-align: left;" class="textHeader">(Area de Trabajo)</h4>
+                                </div>
+                                <div class="col">
+                                    <h4 style="text-align: right;" class="textHeader">(Usuario)</h4>
                                 </div>
                             </div>
-                            <div>
-                                <div class="row">
-                                <div class="col-3">
-                                    <div>
-                                        <input class="form-control inputs" type="text" name="" id="">
+                        </div>
+                        <div class="contentForms">
+                            <div class="row">
+                                <h1 style="text-align: left;">Base de Clientes</h1>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="RFC">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Nombre Sistema">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contentData">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="containerTablw">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">RFC</th>
+                                                    <th scope="col">Nombre</th>
+                                                    <th scope="col">Fecha Alta</th>
+                                                    <th scope="col">Activo</th>
+                                                    <th scope="col">Ver</th>
+                                                    <th scope="col">Modificar</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr v-for="cliente in datosClientes" :key="cliente.idCliente">
+                                                    <th style="text-align: left;">{{ cliente.rfc }}</th>
+                                                    <td style="text-align: left;"> {{ cliente.nomCliente }} </td>
+                                                    <td> {{ cliente.fechaAlta }}</td>
+                                                    <td> {{ cliente.isActivo }}</td>
+                                                    <td>
+                                                        <a href="">
+                                                            <span class="material-symbols-outlined"
+                                                                style="color: goldenrod;">
+                                                                visibility
+                                                            </span>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="">
+                                                            <span class="material-symbols-outlined">
+                                                                edit
+                                                            </span>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
-                                <div class="col-3">
-                                    <input class="form-control inputs" type="text" name="" id="">
-                                </div>
-                                <div class="col">
-                                    <button class="btn btn-primary btnBorrar ">Borrar</button>
-                                </div>
-                                <div class="col">
-                                    <button class="btn btn-primary btnBuscar">Buscar</button>
-                                </div>
-                            </div>     
-                            </div>                       
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </body>
 </template>
 
 
 
 <script>
+
+import axios from 'axios';
+
 export default {
-    name: "BaseDeClientesC"
+    name: "BaseDeClientesC",
+    data() {
+        return {
+            datosClientes: []
+        }
+    },
+    mounted() {
+        this.getClientes();
+    },
+    methods: {
+        getClientes() {
+            axios.get('http://localhost:5138/api/Clientes/Clientes').then(response => (
+                this.datosClientes = response.data
+            )).catch(error => (
+                console.error(error)
+            ))
+        }
+    }
 }
 
 </script>

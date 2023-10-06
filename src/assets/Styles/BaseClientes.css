@@ -1,55 +1,16 @@
-/* * {
-    background-color: #EBE8E8;
-} */
+.filas {
+    margin: 0px;
+}
 
-.containerData {
-    width: 1387px;
-    height: 843px;
+.sideBar {
+    width: 307px;
+    height: 1024px;
     flex-shrink: 0;
-    border-radius: 50px;
-    background: #FFF;
-    margin-left: 20px;
-    margin: auto;
+    background: #F5F3F3;
 }
 
-.columnMenu {
-    width: 293px;
-    height: 843px;
-    flex-shrink: 0;
-    border-radius: 50px 0px 0px 50px;
-    background: #F82828;
-}
-
-
-.columnData {
-    flex-shrink: 0;
-    border-radius: 0px 50px 50px 0px;
-    background: #f7f4f4;
-
-}
-
-
-.icon {
-    width: 100px;
-    margin-top: 50px;
-}
-
-
-.encabezado {
-    margin-top: 10px;
-    font-weight: bold;
-    font-size: 30px;
-}
-
-.rowHeader {
-    padding-left: 40px;
-    padding-right: 40px;
-}
-
-.nav-text {
-    text-align: left;
-    color: white;
-    font-weight: 0;
+a {
+    text-decoration: none;
 }
 
 
@@ -59,57 +20,42 @@
     font-weight: lighter;
 }
 
-.icnosList {
-    color: white;
-
+.divIcon{
+    margin-top: 50px;
 }
 
-.material-symbols-outlined {
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 30
+.ulMenu{
+    padding: 0px;
 }
 
-a {
-    text-decoration: none;
+.aLinks{
+    margin-left: 10px;
 }
 
-.btnBorrar {
-    width: 168px;
-    height: 54px;
-    flex-shrink: 0;
-    border-radius: 10px;
-    border: 0px solid rgba(255, 195, 195, 0.40);
-    background: #B1A8A8;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+.header{
+    margin-top: 30px;
+}
+
+.contentForms{
+    margin-top: 50px;
+}
+
+.contentData{
+    margin-top: 50px;
+}
+
+.contenedorBc{
+    margin: 20px;
+}
+
+.textHeader{
     font-weight: bold;
-
 }
 
-.btnBuscar {
-    width: 162px;
-    height: 54px;
-    flex-shrink: 0;
-    border-radius: 10px;
-    border: 0px solid rgba(255, 195, 195, 0.40);
-    background: #74F846;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    font-weight: bold;
-
+.containerTablw{
+    height: 500px;
 }
 
-.inputs {
-    width: 208px;
-    height: 54px;
-    flex-shrink: 0;
-    border-radius: 10px;
-    border: 5px solid rgba(186, 182, 182, 0.40);
-    background: #FFF;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-
-.colInput{
-    width: 200px;
+.table{
+    height: 500px;
 }
