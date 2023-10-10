@@ -15,26 +15,29 @@
                                 <nav class="main-menu">
                                     <ul style="list-style-type: none;" class="ulMenu">
                                         <li class="listado">
+                                            <span class="material-symbols-outlined icnosList">
+                                                groups
+                                            </span>
                                             <a href="" class="aLinks">
-                                                <span class="material-symbols-outlined icnosList">
-                                                    groups
-                                                </span> Base de Clientes
+                                                Base de Clientes
                                             </a>
 
                                         </li>
                                         <li class="listado">
-                                            <a href="#" class="aLinks">
-                                                <span class="material-symbols-outlined icnosList">
+                                            <span class="material-symbols-outlined icnosList">
                                                     sync
-                                                </span> Renovaciones
+                                                </span>
+                                            <a href="#" class="aLinks">
+                                                Renovaciones
                                             </a>
 
                                         </li>
                                         <li class="listado ">
-                                            <a href="#" class="aLinks">
-                                                <span class="nav-text material-symbols-outlined icnosList">
+                                            <span class="nav-text material-symbols-outlined icnosList">
                                                     add_box
-                                                </span> Sistemas Nuevos
+                                                </span>
+                                            <a href="#" class="aLinks">
+                                                Sistemas Nuevos
                                             </a>
                                         </li>
                                     </ul>
@@ -69,7 +72,7 @@
                         <div class="contentData">
                             <div class="row">
                                 <div class="col">
-                                    <div class="containerTablw">
+                                    <div class="containerTablw" style="overflow: scroll;">
                                         <table class="table">
                                             <thead>
                                                 <tr>

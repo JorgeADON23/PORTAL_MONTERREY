@@ -18,6 +18,8 @@ a {
     text-align: left;
     margin-top: 50px;
     font-weight: lighter;
+    font-size: 18px;
+    font-family: 'Century Gothic', Courier, monospace;
 }
 
 .divIcon{
@@ -37,7 +39,7 @@ a {
 }
 
 .contentForms{
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .contentData{
@@ -53,9 +55,7 @@ a {
 }
 
 .containerTablw{
-    height: 500px;
+    height: 750px;
+    overflow: scroll;
 }
 
-.table{
-    height: 500px;
-}
