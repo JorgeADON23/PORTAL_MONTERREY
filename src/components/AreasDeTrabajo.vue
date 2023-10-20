@@ -6,7 +6,7 @@
                     <h1 style="font-size: 50px;">AREAS DE TRABAJO</h1>
                     <br>
                     <select name="" id="" class="form-select listado">
-                        <option v-for="adt in datosAdt" :key="adt.idAreaT">
+                        <option  v-for="adt in datosAdt" :key="adt.idAreaT" >
                             {{adt.nomArea}}
                         </option>
                     </select>
@@ -25,7 +25,6 @@
 
 <script>
 
-import router from '@/router';
 import axios from 'axios';
 
 export default {
@@ -47,8 +46,8 @@ export default {
                 console.error(error)
             ));
         },
-        irITF(){
-            router.push()
+        irInicio(areaTrabajo){
+            this.$router.push({path: 'BaseDeClientes', params: {adt: areaTrabajo}});
         }
     }
 }
