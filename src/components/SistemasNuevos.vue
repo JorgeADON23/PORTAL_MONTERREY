@@ -65,6 +65,8 @@
                                 </div>
                                 <div class="col">
                                     <input type="text" class="form-control" placeholder="Nombre Sistema">
+                                    <br>
+                                    <a href="/SistemasNuevo/add" style="float: right;">Add</a>
                                 </div>
                             </div>
                         </div>
@@ -73,7 +75,14 @@
                                 <div class="col">
                                     <div class="containerTablw" style="overflow: scroll;">
                                         <table class="table">
-                                            
+                                            <thead  style="z-index: 999;">
+                                                <tr>
+                                                    <th scope="col">No. Solicitud</th>
+                                                    <th scope="col">RFC</th>
+                                                    <th scope="col">Nombre</th>
+                                                    <th scope="col">Fecha Solicitud</th>
+                                                </tr>
+                                            </thead>
                                         </table>
                                     </div>
                                 </div>
@@ -86,9 +95,17 @@
     </body>
 </template>
 
+<script>
+export default{
+    name: "SsistemasNuevosC"
+}
 
+</script>
 
 <style>
 @import url('../assets/Styles/BaseClientes.css');
+
+
+
 </style>
 

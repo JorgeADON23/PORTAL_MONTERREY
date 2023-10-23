@@ -40,6 +40,11 @@ const routes = [
     path : "/SistemasNuevo",
     name: "SistemasNuevos",
     component: () => import('../components/SistemasNuevos.vue')
+  },
+  {
+    path: "/SistemasNuevo/add",
+    name: "AgregarSistema",
+    component: () => import('../components/Sistemas/add.vue')
   }
   
 ]
