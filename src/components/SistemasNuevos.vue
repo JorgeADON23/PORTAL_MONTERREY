@@ -83,6 +83,14 @@
                                                     <th scope="col">Fecha Solicitud</th>
                                                 </tr>
                                             </thead>
+                                            <tbody v-for="sol in lstSolicitudes" :key="sol.idSolicitud">
+                                                <tr>
+                                                    <td>{{ sol.idSolicitud }}</td>
+                                                    <td>{{ sol.rfc }}</td>
+                                                    <td>{{ sol.nomSistema }}</td>
+                                                    <td>{{ sol.FecSolicitud }}</td>
+                                                </tr>
+                                            </tbody>
                                         </table>
                                     </div>
                                 </div>
@@ -96,8 +104,28 @@
 </template>
 
 <script>
+import axios from 'axios';
+
+
+
 export default{
-    name: "SsistemasNuevosC"
+    name: "SsistemasNuevosC",
+    data(){
+        return {
+            lstSolicitudes: []        }
+    },
+    mounted(){
+        this.listarSolicitudes();
+    },
+    methods: {
+        listarSolicitudes(){
+            axios.get("http://localhost:5138/api/Sistemas/ListarSolicitudes/1").then(response =>{
+                this.lstSolicitudes = response.data;
+            }).catch(error =>{
+                console.error(error.message);
+            })
+        }
+    }
 }
 
 </script>

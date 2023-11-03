@@ -115,6 +115,15 @@
                                     <input type="text" class="form-control" v-model="addSistema.Correo">
                                 </div>
                             </div>
+                            <br>
+                            <div class="row">
+                                <div class="col">
+
+                                </div>
+                                <div class="col" >
+                                    <button class="btn btn-primary" @click="enviarSolicitud" style="float: right">Agregar</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -125,6 +134,9 @@
 
 
 <script>
+
+import axios from 'axios';
+
 export default {
     name: "AgregarSistema",
     data (){
@@ -161,6 +173,16 @@ export default {
                 Estatus: 0,
                 IdAreaT: 1
             }
+        }
+    },
+    methods: {
+        enviarSolicitud(){
+            axios.post("http://localhost:5138/api/Sistemas/SolicitudSistema", this.addSistema).then((response) =>(
+                alert(response.data),
+                window.location.reload()
+            )).catch(error =>(
+                console.error(error.message)
+            ))
         }
     }
 }
