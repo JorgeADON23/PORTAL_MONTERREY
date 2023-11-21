@@ -5,8 +5,8 @@
                 <div class="ContenedorAdt">
                     <h1 style="font-size: 50px;">AREAS DE TRABAJO</h1>
                     <br>
-                    <select name="" id="" class="form-select listado">
-                        <option  v-for="adt in datosAdt" :key="adt.idAreaT" >
+                    <select name="" v-model="adtSeleccionada" id="" class="form-select listadoAdt" @change="irInicio">
+                        <option  v-for="adt in datosAdt" :key="adt.idAreaT" :value="adt.idAreaT">
                             {{adt.nomArea}}
                         </option>
                     </select>
@@ -31,7 +31,8 @@ export default {
     name: "AreaDeTrabajosC",
     data(){
         return{
-            datosAdt: []
+            datosAdt: [],
+            adtSeleccionada: null
         }
         
     },
@@ -46,8 +47,8 @@ export default {
                 console.error(error)
             ));
         },
-        irInicio(areaTrabajo){
-            this.$router.push({path: 'BaseDeClientes', params: {adt: areaTrabajo}});
+        irInicio(){
+            this.$router.push({name: 'BaseDeClientes', params: {area: this.adtSeleccionada}});
         }
     }
 }

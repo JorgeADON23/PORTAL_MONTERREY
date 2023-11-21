@@ -50,9 +50,9 @@
                         <div class="header">
                             <div class="row">
                                 <div class="col">
-                                    <h4 style="text-align: left;" class="textHeader">(Area de Trabajo)</h4>
+                                    <h4 style="text-align: left;" class="textHeader">{{ detallesArea.nomArea }}</h4>
                                 </div>
-                                <div class="col">
+                                <div class="col">   
                                     <h4 style="text-align: right;" class="textHeader">(Usuario)</h4>
                                 </div>
                             </div>
@@ -129,17 +129,31 @@ export default {
     data() {
         return {
             datosClientes: [],
-            idAdt: null
+            idAdt: null,
+            nomArea: null,
+            detallesArea: []
         }
     },
     mounted() {
         this.getClientes();
+        this.idAdt =  parseInt(this.$route.params.area);
+        this.datosArea();
+        
   
     },
     methods: {
         getClientes() {
             axios.get('http://localhost:5138/api/Clientes/Clientes').then(response => (
                 this.datosClientes = response.data
+            )).catch(error => (
+                console.error(error)
+            ))
+        },
+
+        datosArea(){
+            axios.get(`http://localhost:5138/api/ADT/AreasDeTrabajo/1`).catch(response =>(
+                this.detallesArea  = response.data
+                
             )).catch(error => (
                 console.error(error)
             ))

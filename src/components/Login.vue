@@ -9,7 +9,7 @@
             <div class="row filas">
                 <div class="col">
                     <input type="text" class="form-control input" placeholder="Usuario">
-                    <input type="text" class="form-control input" placeholder="Contrseña">
+                    <input type="password" class="form-control input" placeholder="Contrseña">
                 </div>
             </div>
             <div class="row">

@@ -27,14 +27,9 @@ const routes = [
     component: () => import('../components/AreasDeTrabajo.vue')
   },
   {
-    path: "/BaseDeClientes",
+    path: "/BaseDeClientes/:area",
     name: "BaseDeClientes",
     component: () => import('../components/BaseClientes.vue')
-  },
-  {
-    path: "/Renovaciones",
-    name: "Renovaciones",
-    component: () => import('../components/Renovaciones.vue')
   },
   {
     path : "/SistemasNuevo",
