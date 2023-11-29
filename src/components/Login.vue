@@ -8,8 +8,8 @@
             </div>
             <div class="row filas">
                 <div class="col">
-                    <input type="text" class="form-control input" placeholder="Usuario">
-                    <input type="password" class="form-control input" placeholder="Contrseña">
+                    <input type="text" v-model="nomUusario" class="form-control input" placeholder="Usuario">
+                    <input type="password" v-model="passw0rd" class="form-control input" placeholder="Contrseña">
                 </div>
             </div>
             <div class="row">
@@ -27,7 +27,7 @@
             <div class="row filas">
                 <div class="col">
                     <div>
-                        <button class="btn btn-danger btnIngrsar" >Ingresar</button>
+                        <button class="btn btn-danger btnIngrsar" @click="validarLogin" >Ingresar</button>
                     </div>
                 </div>
             </div>
@@ -38,8 +38,29 @@
 
 
 <script>
+import axios from 'axios';
+
 export default {
-    name: "ComponenteLogin"
+    name: "ComponenteLogin",
+    data(){
+        return{
+            nomUusario: null,
+            passw0rd: null,
+            token: null
+        }
+    },
+    methods:{
+        validarLogin(){
+            axios.post(`http://localhost:5138/api/Login/Login/${this.nomUusario}/${this.passw0rd}`).then(response =>{
+                this.token = response.data
+
+                if(this.token){
+                    localStorage.setItem('token',this.token )
+                    this.$router.push({name: 'AreasDeTrabajo'});
+                }
+            })
+        },
+    }
 }
 
 </script>

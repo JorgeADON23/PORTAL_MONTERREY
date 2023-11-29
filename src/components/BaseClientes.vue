@@ -24,8 +24,8 @@
                                         </li>
                                         <li class="listado">
                                             <span class="material-symbols-outlined icnosList">
-                                                    sync
-                                                </span>
+                                                sync
+                                            </span>
                                             <router-link to="/Renovaciones" class="aLinks">
                                                 Renovaciones
                                             </router-link>
@@ -33,9 +33,9 @@
                                         </li>
                                         <li class="listado ">
                                             <span class="nav-text material-symbols-outlined icnosList">
-                                                    add_box
-                                                </span>
-                                                <router-link to="/SistemasNuevo" class="aLinks">
+                                                add_box
+                                            </span>
+                                            <router-link to="/SistemasNuevo" class="aLinks">
                                                 Sistemas Nuevos
                                             </router-link>
                                         </li>
@@ -49,10 +49,10 @@
                     <div class="contenedorBc">
                         <div class="header">
                             <div class="row">
-                                <div class="col">
-                                    <h4 style="text-align: left;" class="textHeader">{{ detallesArea.nomArea }}</h4>
+                                <div class="col" v-for="area in detallesArea" :key="area.idAreaT">
+                                    <h4 style="text-align: left;" class="textHeader">{{ area.nomArea }}</h4>
                                 </div>
-                                <div class="col">   
+                                <div class="col">
                                     <h4 style="text-align: right;" class="textHeader">(Usuario)</h4>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@
                                 <div class="col">
                                     <div class="containerTablw" style="overflow: scroll;">
                                         <table class="table">
-                                            <thead  style="z-index: 999;">
+                                            <thead style="z-index: 999;">
                                                 <tr>
                                                     <th scope="col">RFC</th>
                                                     <th scope="col">Nombre</th>
@@ -130,30 +130,32 @@ export default {
         return {
             datosClientes: [],
             idAdt: null,
+            $idAdt: null,
+            area: null,
             nomArea: null,
             detallesArea: []
         }
     },
     mounted() {
-        this.getClientes();
-        this.idAdt =  parseInt(this.$route.params.area);
+        this.idAdt = parseInt(this.$route.params.area);
+        this.clientesItf();
         this.datosArea();
-        
-  
+
+
     },
     methods: {
-        getClientes() {
-            axios.get('http://localhost:5138/api/Clientes/Clientes').then(response => (
-                this.datosClientes = response.data
-            )).catch(error => (
-                console.error(error)
-            ))
+        clientesItf(){
+            axios.get(`http://localhost:5138/api/Clientes/Clientes/${this.idAdt}`).then(resposne => {
+                this.datosClientes = resposne.data
+            }).catch(error => {
+                console.error(error.message);
+            })
         },
 
-        datosArea(){
-            axios.get(`http://localhost:5138/api/ADT/AreasDeTrabajo/1`).catch(response =>(
-                this.detallesArea  = response.data
-                
+        datosArea() {
+            axios.get(`http://localhost:5138/api/ADT/AreasDeTrabajo/${this.idAdt}`).then(response => (
+                this.detallesArea = response.data
+
             )).catch(error => (
                 console.error(error)
             ))

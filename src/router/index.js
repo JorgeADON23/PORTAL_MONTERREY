@@ -24,21 +24,26 @@ const routes = [
   {
     path: "/AreasDeTrabajo",
     name: "AreasDeTrabajo",
-    component: () => import('../components/AreasDeTrabajo.vue')
+    meta: {requiresAuth: true},
+    component: () => import('../components/AreasDeTrabajo.vue'),
+    
   },
   {
     path: "/BaseDeClientes/:area",
     name: "BaseDeClientes",
+    meta: {requiresAuth: true},
     component: () => import('../components/BaseClientes.vue')
   },
   {
     path : "/SistemasNuevo",
     name: "SistemasNuevos",
+    meta: {requiresAuth: true},
     component: () => import('../components/SistemasNuevos.vue')
   },
   {
     path: "/SistemasNuevo/add",
     name: "AgregarSistema",
+    meta: {requiresAuth: true},
     component: () => import('../components/Sistemas/add.vue')
   }
   
@@ -48,5 +53,16 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
+
+
+router.beforeEach((to, from, next) => {
+  const token = localStorage.getItem('token');
+
+  if (to.meta.requiresAuth && !token) {
+    next('/login');
+  } else {
+    next();
+  }
+});
 
 export default router
